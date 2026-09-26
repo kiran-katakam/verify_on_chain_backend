@@ -18,6 +18,15 @@ const universitySchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    status: {
+        type: String,
+        enum: ["pending_onchain", "active"],
+        default: "pending_onchain",
+    },
+    txHash: {
+        type: String,
+        default: null,
+    },
     createdAt: {
         type: Date,
         default: Date.now,

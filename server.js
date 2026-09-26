@@ -26,7 +26,7 @@ app.get("/health", (req, res) => {
 app.get("/universities", async (req, res) => {
     try {
         const universities = await University.find(
-            {},
+            { status: "active" },
             { name: 1, shortCode: 1, walletAddress: 1 }
         ).sort({ name: 1 });
         res.json(universities);
