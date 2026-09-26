@@ -39,9 +39,9 @@ app.get("/universities", async (req, res) => {
 app.get("/auth/role", async (req, res) => {
     const walletAddress = req.headers["x-wallet-address"];
     if (!walletAddress) {
-        return res.json({ role: null });
+        return res.json({ role: "FUCK" });
     }
-    const user = await User.findOne({ walletAddress: walletAddress.toLowerCase() });
+    const user = await User.findOne({ walletAddress: walletAddress });
     res.json({ role: user?.role || null });
 });
 
