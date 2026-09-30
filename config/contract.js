@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 // Load ABI from compiled contract artifacts
 const abiPath = join(
     __dirname,
-    "../../verify_on_chain_contracts/artifacts/contracts/VerifyOnChain.sol/VerifyOnChain.json"
+    "./VerifyOnChain.json"
 );
 
 let contractABI;
